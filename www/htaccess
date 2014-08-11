@@ -1,0 +1,8 @@
+#default htaccess module
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /fedo/www/
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule . /fedo/www/index.php [L]
+</IfModule>
