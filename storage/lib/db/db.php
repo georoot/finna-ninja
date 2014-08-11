@@ -19,12 +19,12 @@
 class db
 {
 	// SET THESE VALUES TO MATCH YOUR DATA CONNECTION
-	private $db_host    = $GLOBALS['db_host']; // server name
-	private $db_user    = $GLOBALS['db_username'];          // user name
-	private $db_pass    = $GLOBALS['db_password'];          // password
-	private $db_dbname  = $GLOBALS['db_name'];          // database name
+	private $db_host    = ""; // server name
+	private $db_user    = "";          // user name
+	private $db_pass    = "";          // password
+	private $db_dbname  = "";          // database name
 	private $db_charset = "";          // optional character set (i.e. utf8)
-	private $db_pcon    = $GLOBALS['db_persistant'];      // use persistent connection?
+	private $db_pcon    = "";      // use persistent connection?
 
 	// constants for SQLValue function
 	const SQLVALUE_BIT      = "bit";
@@ -66,13 +66,12 @@ class db
 	 * @param string $password (Optional) Password
 	 * @param string $charset  (Optional) Character set
 	 */
-	public function __construct($connect = true, $database = null, $server = null,
-								$username = null, $password = null, $charset = null) {
+	public function __construct($connect = true,$charset = null) {
 
-		if ($database !== null) $this->db_dbname  = $database;
-		if ($server   !== null) $this->db_host    = $server;
-		if ($username !== null) $this->db_user    = $username;
-		if ($password !== null) $this->db_pass    = $password;
+		if ($database !== null) $this->db_dbname  = $GLOBALS['db_name'];
+		if ($server   !== null) $this->db_host    = $GLOBALS['db_host'];
+		if ($username !== null) $this->db_user    = $GLOBALS['db_username'];
+		if ($password !== null) $this->db_pass    = $GLOBALS['db_password'];
 		if ($charset  !== null) $this->db_charset = $charset;
 
 		if (strlen($this->db_host) > 0 &&

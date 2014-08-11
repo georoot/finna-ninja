@@ -1,4 +1,10 @@
 <?php
+/**
+* @version 0.1
+* @author Rahul Bhola
+* @link https://www.facebook.com/g30r00t
+*/
+
 
 /*Variable to help shift in production*/
 $GLOBALS['app_deploy'] = False;	//set to true to avoid error messages from framework
@@ -6,7 +12,7 @@ $GLOBALS['app_name'] = ""; // name of the application
 /*Variable to help shift in production ends here*/
 
 /*Database Configuration comes here*/
-$GLOBALS['db_name'] = "";	//database username
+$GLOBALS['db_name'] = "";	//database name
 $GLOBALS['db_host'] = "";	//database host : localhost if on same system
 $GLOBALS['db_username'] = "";	//database username
 $GLOBALS['db_password'] = "";	//database password
@@ -24,5 +30,5 @@ $GLOBALS['path_log'] = "../storage/log/";
 
 
 /*SESSION details come here*/
-$GLOBALS['session_name'] = "FRAMEWORK_";	// the name that should be displayed on the session cookie
+$GLOBALS['session_name'] = "finna-ninja_";	// the name that should be displayed on the session cookie
 /*SESSION details ends here*/

@@ -1,4 +1,11 @@
 <?php
+
+/**
+* @version 0.1
+* @author Rahul Bhola
+* @link https://www.facebook.com/g30r00t
+*/
+
 /*Contains all the routing information for the project*/
 /*First routing stage is through pages*/
 /*Second routing stage is through interface components*/
