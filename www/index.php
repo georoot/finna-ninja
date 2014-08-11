@@ -23,28 +23,25 @@ function __autoload($class_name) {
 /*Class autoloader ends here*/
 
 $url = $_SERVER["REQUEST_URI"];
+// print $url;
 
-$url = explode("/",$url);
-// print_r($url);
-$baseIndex = 3;
+$url = str_replace($GLOBALS['base_url'], "", $url);
+$key = array_keys($GLOBALS['url_routing']);
 
-if($url[$baseIndex] == ""){
-	//this is the home
-	include $GLOBALS['path_components']."header.php";
-	include $GLOBALS['path_components']."home.php";
-	include $GLOBALS['path_components']."footer.php";
+for ($i=0; $i < sizeof($key); $i++) { 
+	if (preg_match($key[$i], $url)) {
+		$page_name = $GLOBALS['url_routing'][$key[$i]];
+		include $GLOBALS['path_pages'].$page_name.".php";
+		die();
+	}
 }
 
-
-else{
-	$i = new interfacex();
-	$methods = get_class_methods($i);
+$i = new interfacex();
+$methods = get_class_methods($i);
 	if (in_array($url[$baseIndex], $methods)) {
 			//time to create a reflection and invoke the method i guess
 		$reflexion = new ReflectionMethod("interfacex",$url[$baseIndex]);
 		$param_number = count($reflexion -> getParameters());
 		print $i -> $url[$baseIndex]($url,$baseIndex);
+		die();
 	}
-	
-	die();
-}
