@@ -1,35 +1,28 @@
 <?php
 
 /*Variable to help shift in production*/
-$GLOBALS['app_deploy'] = True;
-$GLOBALS['app_name'] = "Framework app";
+$GLOBALS['app_deploy'] = False;	//set to true to avoid error messages from framework
+$GLOBALS['app_name'] = ""; // name of the application
 /*Variable to help shift in production ends here*/
 
 /*Database Configuration comes here*/
-$GLOBALS['db_name'] = "seedsa";
-$GLOBALS['db_host'] = "localhost";
-$GLOBALS['db_username'] = "root";
-$GLOBALS['db_password'] = "toor";
+$GLOBALS['db_name'] = "";	//database username
+$GLOBALS['db_host'] = "";	//database host : localhost if on same system
+$GLOBALS['db_username'] = "";	//database username
+$GLOBALS['db_password'] = "";	//database password
+$GLOBALS['db_persistant'] = false;	//set to true if persistant connections are required
 /*Database Configuration ends here*/
 
 /*Directory Structure Comes here*/
 $GLOBALS['path_lib'] = "../storage/lib/";
 $GLOBALS['path_uploads'] = "../storage/uploads/";
 $GLOBALS['path_components'] = "../components/";
-// $GLOBALS['path_static'] = "../static/";
 $GLOBALS['path_interface'] = "../interface.php";
 $GLOBALS['path_cache'] = "../storage/cache/";
-$GLOBALS['path_lib_var'] = "../lib_var/";
-// $GLOBALS['path_bin'] = "../bin/";
 $GLOBALS['path_log'] = "../storage/log/";
 /*Directory Structure Ends here*/
 
-/*Components or page structure comes here*/
-$GLOBALS['page_header'] = $GLOBALS['path_components']."header.php";
-$GLOBALS['page_footer'] = $GLOBALS['path_components']."footer.php";
-$GLOBALS['page_404'] = $GLOBALS['path_components']."404.php";
-/*Components or page structure ends here*/
 
 /*SESSION details come here*/
-$GLOBALS['session_name'] = "FRAMEWORK_";
+$GLOBALS['session_name'] = "FRAMEWORK_";	// the name that should be displayed on the session cookie
 /*SESSION details ends here*/

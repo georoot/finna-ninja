@@ -11,7 +11,7 @@ include $GLOBALS['path_interface'];
 
 /*Class autoloaded*/
 function __autoload($class_name) {
-    include $GLOBALS['path_lib'].$class_name . '.php';
+    include $GLOBALS['path_lib']."$class_name/".$class_name . '.php';
 }
 /*Class autoloader ends here*/
 
