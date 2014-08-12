@@ -25,7 +25,6 @@ $GLOBALS['path_uploads'] = "../storage/uploads/";
 $GLOBALS['path_pages'] = "../pages/";
 $GLOBALS['path_components'] = "../components/";
 $GLOBALS['path_interface'] = "../interface.php";
-$GLOBALS['path_cache'] = "../storage/cache/";
 $GLOBALS['path_log'] = "../storage/log/";
 /*Directory Structure Ends here*/
 

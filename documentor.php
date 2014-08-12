@@ -6,14 +6,15 @@
 */
 
 
-error_reporting(0);
-$m = array(0 => "logger");
+// error_reporting(0);
+$m = array(0 => "file");
 
 $documentation = "";
 $documentation = $documentation."Documentor V 0.1";
 
 for ($i=0;$i<sizeof($m);$i++){
-	include_once("storage/lib/".$m[$i]."/".$m[$i].".php");
+	include_once("./storage/lib/".$m[$i]."/".$m[$i].".php");
+	// print "storage/lib/".$m[$i]."/".$m[$i].".php";
 	$buffer = new $m[$i]();
 	//print $m[$i]."\n";
 	$documentation = $documentation."\n\n\n\nClass ".($i+1).":".$m[$i]."\n";
