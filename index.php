@@ -13,6 +13,14 @@
 date_default_timezone_set('UTC');
 /*Essential imports*/
 include './config.php';
+
+if($GLOBALS['drop_unsecure']){
+	//drop all unsecure connections here
+	if(!(isset($_SERVER['HTTPS']) and ($_SERVER['HTTPS'] == "on"))){
+		die("unsecure connection");
+	}
+}
+
 include $GLOBALS['path_interface'];
 /*Essential imports ends here*/
 
@@ -23,8 +31,19 @@ function __autoload($class_name) {
 /*Class autoloader ends here*/
 
 $url = $_SERVER["REQUEST_URI"];
-//print $url;
-print $GLOBALS['db_name'];
+// print $url;
+
+$i = new interfacex();
+$methods = get_class_methods($i);
+	$urlx = explode("/", $url);
+	if (in_array($urlx[0], $methods)) {
+		$reflexion = new ReflectionMethod("interfacex",$urlx[0]);
+		$param_number = count($reflexion -> getParameters());
+		print $i -> $urlx[0]($url);
+		die();
+	}
+
+
 $url = str_replace($GLOBALS['base_url'], "", $url);
 //print $url;
 $key = array_keys($GLOBALS['url_routing']);
@@ -38,14 +57,6 @@ for ($i=0; $i < sizeof($key); $i++) {
 }
 
 
-$i = new interfacex();
-$methods = get_class_methods($i);
-	$url = explode("/", $url);
-	if (in_array($url[0], $methods)) {
-		$reflexion = new ReflectionMethod("interfacex",$url[0]);
-		$param_number = count($reflexion -> getParameters());
-		print $i -> $url[0]($url);
-		die();
-	}
+
 
 //TODO: invoke 404 if the pages are not found and at the same time no interfacex function mapping this is found

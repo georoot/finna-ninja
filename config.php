@@ -9,6 +9,7 @@
 /*Variable to help shift in production*/
 $GLOBALS['app_deploy'] = False;	//set to true to avoid error messages from framework
 $GLOBALS['base_url'] = "/"; // url of the application
+$GLOBALS['drop_unsecure'] = False;
 /*Variable to help shift in production ends here*/
 
 /*Database Configuration comes here*/
@@ -34,5 +35,5 @@ $GLOBALS['session_name'] = "finna-ninja_";	// the name that should be displayed 
 /*SESSION details ends here*/
 
 /*this is for url routing*/
-$GLOBALS['url_routing'] = array('/^def/' => "helloworld");
+$GLOBALS['url_routing'] = array('/\w/' => "helloworld");
 /*url routing var ends here*/
