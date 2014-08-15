@@ -6,6 +6,8 @@
 */
 
 class interfacex{
-	const CONST_VALUE = 'A constant value';
+	public function helloworld($url){
+		print "hello world function is invoked";
+	}
 }
 ?>
