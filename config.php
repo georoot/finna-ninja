@@ -34,6 +34,12 @@ $GLOBALS['path_log'] = "./storage/log/";
 $GLOBALS['session_name'] = "finna-ninja_";	// the name that should be displayed on the session cookie
 /*SESSION details ends here*/
 
+/*error pages comes here*/
+$GLOBALS['404'] = "404";
+/*error pages ends here*/
+
 /*this is for url routing*/
-$GLOBALS['url_routing'] = array('/\w/' => "helloworld");
+$GLOBALS['url_routing'] = array('/^home$/' => "home",
+			"/^documentation$/" => "docs",
+			"/^developers$/" => "devs");
 /*url routing var ends here*/

@@ -56,7 +56,7 @@ for ($i=0; $i < sizeof($key); $i++) {
 	}
 }
 
-
-
+include $GLOBALS['path_pages'].$GLOBALS['404'].".php";
+die();
 
 //TODO: invoke 404 if the pages are not found and at the same time no interfacex function mapping this is found
