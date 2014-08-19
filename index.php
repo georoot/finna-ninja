@@ -20,6 +20,8 @@ if($GLOBALS['drop_unsecure']){
 		die("unsecure connection");
 	}
 }
+header_remove("Server");
+header_remove("X-Powered-By");
 
 include $GLOBALS['path_interface'];
 /*Essential imports ends here*/

@@ -1,9 +1,9 @@
 <?php
 /*to add more refer http://www.freeformatter.com/mime-types-list.html*/
-$mime = new array("html" => "text/html",
+$mime = array("html" => "text/html",
 		"css" => "text/css",
 		"js" => "application/javascript",
-		"json" => "application/json"
+		"json" => "application/json",
 		"jpg" => "image/jpeg",
 		"jpeg" => "image/jpeg",
 		"swf" => "application/x-shockwave-flash",

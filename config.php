@@ -28,7 +28,7 @@ $GLOBALS['path_components'] = "./components/";
 $GLOBALS['path_interface'] = "./interface.php";
 $GLOBALS['path_log'] = "./storage/log/";
 $GLOBALS['path_static'] = "./static";
-$GLOBALS['path_mine'] = "mime.php";
+$GLOBALS['path_mime'] = "mime.php";
 /*Directory Structure Ends here*/
 
 
