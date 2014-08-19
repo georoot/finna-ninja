@@ -23,7 +23,7 @@ $GLOBALS['db_persistant'] = false;	//set to true if persistant connections are r
 /*Directory Structure Comes here*/
 $GLOBALS['path_lib'] = "./storage/lib/";
 $GLOBALS['path_uploads'] = "./storage/uploads/";
-$GLOBALS['path_pages'] = "./pages/";
+$GLOBALS['path_pages'] = "./view/";
 $GLOBALS['path_components'] = "./components/";
 $GLOBALS['path_interface'] = "./interface.php";
 $GLOBALS['path_log'] = "./storage/log/";
