@@ -8,7 +8,7 @@
 
 /*Variable to help shift in production*/
 $GLOBALS['app_deploy'] = False;	//set to true to avoid error messages from framework
-$GLOBALS['base_url'] = "/"; // url of the application
+$GLOBALS['base_url'] = ""; // url of the application
 $GLOBALS['drop_unsecure'] = False;
 /*Variable to help shift in production ends here*/
 
@@ -27,6 +27,8 @@ $GLOBALS['path_pages'] = "./pages/";
 $GLOBALS['path_components'] = "./components/";
 $GLOBALS['path_interface'] = "./interface.php";
 $GLOBALS['path_log'] = "./storage/log/";
+$GLOBALS['path_static'] = "./static";
+$GLOBALS['path_mine'] = "mime.php";
 /*Directory Structure Ends here*/
 
 

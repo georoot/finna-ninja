@@ -56,6 +56,24 @@ for ($i=0; $i < sizeof($key); $i++) {
 	}
 }
 
+/*check if the file is present in the static folder or not*/
+$basepath = $GLOBALS['path_static'];
+$realBase = realpath($basepath);
+$userpath = $basepath.$url;
+$realUserPath = realpath($userpath);
+$realBase = $realBase."/";
+//print $realBase."<br>".$realUserPath."<br>";
+$res = substr($realUserPath,0,strlen($realBase));
+if(strcmp($realBase,$res) == 0){
+	$filex = $realUserPath;
+	$filex = explode(".",$filex);
+	$extention = $filex[sizeof($filex)-1];
+	include $GLOBALS['path_mime'];
+	header('Content-type: '.$mime[$extention]);
+	readfile($realUserPath);
+	die();
+}
+
 include $GLOBALS['path_pages'].$GLOBALS['404'].".php";
 die();
 
