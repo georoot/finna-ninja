@@ -41,7 +41,8 @@ $GLOBALS['404'] = "404";
 /*error pages ends here*/
 
 /*this is for url routing*/
-$GLOBALS['url_routing'] = array('/^home$/' => "home",
-			"/^documentation$/" => "docs",
-			"/^developers$/" => "devs");
+$GLOBALS['url_routing'] = array('/^\/$/' => "home",
+			'/^\/home$/' => "home",
+			"/^\/documentation$/" => "docs",
+			"/^\/developers$/" => "devs");
 /*url routing var ends here*/
