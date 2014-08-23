@@ -17,7 +17,7 @@ $GLOBALS['db_name'] = "";	//database name
 $GLOBALS['db_host'] = "";	//database host : localhost if on same system
 $GLOBALS['db_username'] = "";	//database username
 $GLOBALS['db_password'] = "";	//database password
-$GLOBALS['db_persistant'] = false;	//set to true if persistant connections are required
+$GLOBALS['db_persistant'] = true;	//set to true if persistant connections are required (persistant recommended)
 /*Database Configuration ends here*/
 
 /*Directory Structure Comes here*/
