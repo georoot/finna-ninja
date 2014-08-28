@@ -21,6 +21,17 @@ class table{
 		return $this;
 	}
 
+	public function count($param){
+		$res = $this -> collection -> count($param);
+		$result[sizeof($result)] = $res;
+		return $this;
+	}
+
+	public function update($old,$new){
+		$this -> collection -> update($old,$new);
+		return $this;
+	}
+
 	public function insert($data){
 		$this -> collection -> insert($data);
 		return $this;
