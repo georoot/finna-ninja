@@ -38,10 +38,10 @@ $url = $_SERVER["REQUEST_URI"];
 $i = new interfacex();
 $methods = get_class_methods($i);
 	$urlx = explode("/", $url);
-	if (in_array($urlx[0], $methods)) {
-		$reflexion = new ReflectionMethod("interfacex",$urlx[0]);
+	if (in_array($urlx[1], $methods)) {
+		$reflexion = new ReflectionMethod("interfacex",$urlx[1]);
 		$param_number = count($reflexion -> getParameters());
-		print $i -> $urlx[0]($url);
+		print $i -> $urlx[1]($url);
 		die();
 	}
 
