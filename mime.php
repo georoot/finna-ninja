@@ -9,5 +9,5 @@ $mime = array("html" => "text/html",
 		"swf" => "application/x-shockwave-flash",
 		"pdf" => "application/pdf",
 		"bmp" => "image/bmp",
-		"png" => "",//find and add the mime type for png
+		"png" => "image/png",
 		"sh" => "application/x-sh");
