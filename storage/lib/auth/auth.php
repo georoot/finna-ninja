@@ -1,4 +1,5 @@
 <?php
+/*Dependency: db*/
 class auth{
 	public function __construct(){
 		session_name($GLOBALS['session_name']);
@@ -8,17 +9,17 @@ class auth{
 	public function signup($data){
 		if (isset($data["username"]) and isset($data["password"])) {
 			$data["password"] = password_hash($data["password"], PASSWORD_DEFAULT);
-			db::dbs("user") -> collection("data") -> insert($data);
+			db::dbs($GLOBALS['db_name']) -> collection("class_auth") -> insert($data);
 			return true;
 		}
 		return false;
 	}
 
 	public function login($username,$password){
-		$data = db::dbs("user") -> collection("data") -> find(array("username" => $username));
+		$data = db::dbs($GLOBALS['db_name']) -> collection("class_auth") -> find(array("username" => $username));
 		if (sizeof($data) == 1 and (password_verify($password, $data[0]["password"]))) {
 			$key = array_keys($data);
-			for ($i=0; $i < sizeof($key); $i++) { 
+			for ($i=0; $i < sizeof($key); $i++) {
 				//all data buffered to session
 				$_SESSION[$key[$i]] = $data[$key[$i]];
 			}

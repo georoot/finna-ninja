@@ -9,7 +9,6 @@ class db{
 class table{
 	var $client;
 	var $collection;
-	var $result;
     var $logged;
 
 	public function __construct($database){
@@ -36,8 +35,7 @@ class table{
 
 	public function count($param){
 		$res = $this -> collection -> count($param);
-		$result[sizeof($result)] = $res;
-		return $this;
+		return $res;
 	}
 
 	public function update($old,$new){
@@ -52,11 +50,7 @@ class table{
 
 	public function find($data){
 		$cursor = $this -> collection -> find($data);
-		$result[sizeof($result)] = iterator_to_array($cursor);
-		return $this;
+		return iterator_to_array($cursor);
 	}
 
-	public function result(){
-		return $this -> result;
-	}
 }
