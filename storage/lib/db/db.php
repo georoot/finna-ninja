@@ -10,11 +10,24 @@ class table{
 	var $client;
 	var $collection;
 	var $result;
+    var $logged;
 
 	public function __construct($database){
 		$this -> client = new MongoClient();
-		$this -> client = $this -> client -> selectDB($database);
+        if(isset($GLOBALS['db_username']) and isset($GLOBALS['db_password']){
+            //authenticate the database
+            $this -> logged = true;
+            $this -> client -> authenticate($GLOBALS['db_username'],$GLOBALS['db_password']);
+        }
+        $this -> client = $this -> client -> selectDB($database);
 	}
+
+    public function __destruct(){
+        if($logged){
+            $this -> client ->command(array("logout" => 1));
+        }
+    }
+
 
 	public function collection($name){
 		$this -> collection = new MongoCollection($this -> client,$name);
