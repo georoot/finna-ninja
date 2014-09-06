@@ -5,8 +5,11 @@
         public function __construct(){
         }
 
-        public function registerApp(){
+        public function registerApp($information){
             //generate a public and private key
+            $public = uniqid($GLOBALS['app_name']);
+            $private = openssl_random_pseudo_bytes(400);
+            print $public."<br>Private<br>".$private;
         }
 
         public function generateAuthorizationCode($publicKey){

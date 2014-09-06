@@ -7,6 +7,7 @@
 
 
 /*Variable to help shift in production*/
+$GLOBALS['app_name'] = "finna";
 $GLOBALS['app_deploy'] = False;	//set to true to avoid error messages from framework
 $GLOBALS['base_url'] = ""; // url of the application
 $GLOBALS['drop_unsecure'] = False;
