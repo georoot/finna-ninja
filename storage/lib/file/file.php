@@ -1,7 +1,7 @@
 <?php
     class file{
         var $name;
-        $valid = false;
+        var $valid = false;
 
         public function __construct($name){
             $basepath = $GLOBALS['path_uploads'];
@@ -13,7 +13,7 @@
             if(strcmp($realBase,$res) == 0){
                 $this -> valid = true;
             }
-            $this -> name = $name;
+            $this -> name = $realUserPath;
         }
 
         public function read(){
