@@ -1,4 +1,3 @@
 <?php
-$m = new blog();
-$c = $m -> get(array("title" => "something"));
-print_r($c);
+$m = db::dbs($GLOBALS['db_name']) -> collection("class_auth") -> drop(array("username" => "rahul"));
+print_r($m);

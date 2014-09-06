@@ -58,4 +58,8 @@ class table{
 		return $cursor;
 	}
 
+    public function drop($condition){
+        $this -> collection -> remove($condition);
+    }
+
 }
