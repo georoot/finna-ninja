@@ -1,6 +1,4 @@
 <?php
-$auth = new auth();
-//$auth -> login("rahul","sahil");
-print $auth -> get("username");
-print "123";
-//$auth -> logout();
+$f = new file("m.php");
+$x = $f -> read();
+print $x;
