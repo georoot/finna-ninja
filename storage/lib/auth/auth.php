@@ -1,5 +1,6 @@
 <?php
 /*Dependency: db*/
+/*add some more functions to accomodate api calls to this system*/
 class auth{
 	public function __construct(){
 		session_name($GLOBALS['session_name']);
