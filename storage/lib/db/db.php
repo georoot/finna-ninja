@@ -13,7 +13,7 @@ class table{
 
 	public function __construct($database){
 		$this -> client = new MongoClient();
-        if(isset($GLOBALS['db_username']) and isset($GLOBALS['db_password']){
+        if(isset($GLOBALS['db_username']) and isset($GLOBALS['db_password'])){
             //authenticate the database
             $this -> logged = true;
             $this -> client -> authenticate($GLOBALS['db_username'],$GLOBALS['db_password']);
@@ -22,7 +22,7 @@ class table{
 	}
 
     public function __destruct(){
-        if($logged){
+        if($this -> logged){
             $this -> client ->command(array("logout" => 1));
         }
     }

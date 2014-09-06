@@ -13,9 +13,9 @@ $GLOBALS['drop_unsecure'] = False;
 /*Variable to help shift in production ends here*/
 
 /*Database Configuration comes here*/
-$GLOBALS['db_name'] = "";	//database name
+$GLOBALS['db_name'] = "finnadb";	//database name
 $GLOBALS['db_host'] = "";	//database host : localhost if on same system
-//$GLOBALS['db_username'] = "";	//database username
+//$GLOBALS['db_username'] = "";	//database username /*uncomment if username and password to dbs exists*/
 //$GLOBALS['db_password'] = "";	//database password
 $GLOBALS['db_persistant'] = true;	//set to true if persistant connections are required (persistant recommended)
 /*Database Configuration ends here*/
