@@ -25,6 +25,9 @@
             $data = db::dbs($GLOBALS['db_name']) -> collection("class_follow") -> find(array("follower" => $username));
         }
         public function stopFollowing($username){
+            if($this -> logged){
+                db::dbs($GLOBALS['db_name']) -> collection("class_follow") -> drop(array("follower" => $this -> auth -> get("username"),"following" => $username));
+            }
         }
     }
 
