@@ -16,8 +16,8 @@ class auth{
 	}
 
 	public function login($username,$password){
-		$data = db::dbs($GLOBALS['db_name']) -> collection("class_auth") -> find(array("username" => $username));
-		if (sizeof($data) == 1 and (password_verify($password, $data[0]["password"]))) {
+		$data = db::dbs($GLOBALS['db_name']) -> collection("class_auth") -> findOne(array("username" => $username));
+		if (password_verify($password, $data["password"])) {
 			$key = array_keys($data);
 			for ($i=0; $i < sizeof($key); $i++) {
 				//all data buffered to session

@@ -53,4 +53,9 @@ class table{
 		return iterator_to_array($cursor);
 	}
 
+	public function findOne($data){
+		$cursor = $this -> collection -> findOne($data);
+		return $cursor;
+	}
+
 }
