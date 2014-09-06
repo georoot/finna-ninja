@@ -1,5 +1,6 @@
 <?php
 $auth = new auth();
-if($auth -> login("rahul","sahil")){
-    print "123";
-}
+//$auth -> login("rahul","sahil");
+print $auth -> get("username");
+print "123";
+//$auth -> logout();
