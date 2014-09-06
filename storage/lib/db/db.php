@@ -48,8 +48,11 @@ class table{
 		return $this;
 	}
 
-	public function find($data){
+	public function find($data,$limit){
 		$cursor = $this -> collection -> find($data);
+        if($limit != null){
+            $cursor -> limit($limit);
+        }
 		return iterator_to_array($cursor);
 	}
 
