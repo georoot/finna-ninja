@@ -7,7 +7,6 @@
 
 class interfacex{
 	public function helloworld($url){
-		print "hello world function is invoked";
 	}
 }
 ?>
