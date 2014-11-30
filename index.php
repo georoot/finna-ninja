@@ -62,6 +62,8 @@ for ($i=0; $i < sizeof($key); $i++) {
 $basepath = $GLOBALS['path_static'];
 $realBase = realpath($basepath);
 $userpath = $basepath.$url;
+$a = explode("?",$userpath);
+$userpath = $a[0];
 $realUserPath = realpath($userpath);
 $realBase = $realBase."/";
 //print $realBase."<br>".$realUserPath."<br>";
