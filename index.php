@@ -31,7 +31,7 @@ function __autoload($class_name) {
     include $GLOBALS['path_lib']."$class_name/".$class_name . '.php';
 }
 /*Class autoloader ends here*/
-
+include $GLOBALS['path_init'];
 $url = $_SERVER["REQUEST_URI"];
 // print $url;
 
@@ -41,7 +41,7 @@ $methods = get_class_methods($i);
 	if (in_array($urlx[1], $methods)) {
 		$reflexion = new ReflectionMethod("interfacex",$urlx[1]);
 		$param_number = count($reflexion -> getParameters());
-		print $i -> $urlx[1]($url);
+		print $i -> $urlx[1]($urlx);
 		die();
 	}
 

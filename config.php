@@ -30,6 +30,7 @@ $GLOBALS['path_interface'] = "./interface.php";
 $GLOBALS['path_log'] = "./storage/log/";
 $GLOBALS['path_static'] = "./static";
 $GLOBALS['path_mime'] = "mime.php";
+$GLOBALS['path_init'] = "mime.php";
 $GLOBALS['log_file_name'] = "finna.log";
 /*Directory Structure Ends here*/
 
