@@ -20,6 +20,12 @@ if($GLOBALS['drop_unsecure']){
 		die("unsecure connection");
 	}
 }
+
+function errorh($errno, $errstr, $errfile, $errline){
+	print "some error detected";
+}
+set_error_handler("errorh");
+
 header_remove("Server");
 header_remove("X-Powered-By");
 
